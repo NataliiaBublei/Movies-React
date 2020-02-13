@@ -1,14 +1,14 @@
 
 const initialState = {
-  books: []
+  films: []
 };
 
 const reducer = (state = initialState, action) => {
 
   switch (action.type) {
-    case 'BOOKS_LOADED':
+    case 'FILMS_LOADED':
       return {
-        books: action.payload
+        films: action.payload
       };
 
     default:

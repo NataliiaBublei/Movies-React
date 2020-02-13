@@ -1,30 +1,51 @@
-.book-list-item {
+.film-list-item {
     display: flex;
-    margin: 15px 0;
+    flex-wrap: wrap;
+    margin: 15px;
+    max-width: 250px;
+    height: 500px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
 }
 
-.book-list-item .book-cover {
-    flex-shrink: 0;
-    width: 120px;
-    margin-right: 30px;
+.film-list-item .film-poster {
+    max-width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.book-list-item  .book-cover img {
+.film-list-item  .film-poster img {
     width: 100%;
+    margin: -35px 0 -20px 0;
 }
 
-.book-list-item .book-details {
+.film-list-item .film-details {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 10px;
-    align-items: flex-start;
+
+    font-size: 16px;
+    font-family: "OpenSans", serif;
+    color: rgb(172, 170, 170);
+    line-height: 1.23;
+    margin: 15px;
 }
 
-.book-list-item .book-details .book-title {
-    font-size: 1.2rem;
+
+.film-list-item .film-details .film-title {
+    font-size: 18px;
+    font-family: "OpenSans", serif;
+    color: rgb(76, 76, 76);
+
+    text-decoration: none;
+}
+.film-list-item .film-details .film-title:hover,
+.film-list-item .film-details .film-title:active {
+    color: rgb(25,25,25);
+    font-weight: 500;
 }
 
-.book-list-item .book-details .book-price {
-    font-size: 1.4rem;
+.film-list-item .film-details .film-genreIds {
+    margin: 5px 0;
 }
+

@@ -1,20 +1,20 @@
 import React from "react";
 
-import { BookstoreServiceConsumer } from "../bookstore-service-context";
+import { FilmsServiceConsumer} from "../films-service-context";
 
-const withBookstoreService = () => (Wrapped) => {
+const withFilmsService = () => (Wrapped) => {
   return (props) => {
     return (
-      <BookstoreServiceConsumer>
+      <FilmsServiceConsumer>
         {
-          (bookstoreService) => {
+          (apiAdapter) => {
             return <Wrapped {...props}
-                            bookstoreService={bookstoreService}/>
+                            apiAdapter={apiAdapter}/>
           }
         }
-      </BookstoreServiceConsumer>
+      </FilmsServiceConsumer>
     )
   }
 };
 
-export default withBookstoreService;
+export default withFilmsService;

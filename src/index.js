@@ -1,12 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import App from "./components/app";
+import ApiAdapter from "./services/ApiAdapter";
+import ErrorBoundry from "./components/error-boundry";
+import { FilmsServiceProvider } from "./components/films-service-context";
+
+import store from "./store";
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const apiAdapter = new ApiAdapter();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDom.render(
+  <Provider store={store}>
+    <ErrorBoundry>
+      <FilmsServiceProvider value={apiAdapter}>
+        <Router>
+          <App />
+        </Router>
+      </FilmsServiceProvider>
+    </ErrorBoundry>
+  </Provider>,
+  document.getElementById('root')
+);

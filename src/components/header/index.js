@@ -1,3 +1,3 @@
-import ShopHeader from "./shop-header";
+import Header from "./header";
 
-export default ShopHeader;
+export default Header;

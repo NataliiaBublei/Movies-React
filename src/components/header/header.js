@@ -1,17 +1,24 @@
 import React from "react";
 
-import './shop-header.css';
+import './header.css';
+import userIcon from '../../assets/user-icon.png'
 
-const ShopHeader = ({ numItems, total }) => {
+
+const Header = () => {
   return (
-    <header className="shop-header row">
-      <a className="logo text-dark" href="#">Store</a>
-      <a className="shopping-cart">
-        <i className="cart-icon fa fa-shopping-cart" />
-        {numItems} items (${total})
-      </a>
+    <header className="header">
+      <a className="logo" href="#">Films</a>
+      <form>
+        <input type="text" placeholder="Search.."
+               name="search" className="search"/>
+        <button type="submit" className="search-icon" />
+      </form>
+      <div className="user">
+        <img src={userIcon} className="icon" alt="user"/>
+        <span>Nataliia Bublei</span>
+      </div>
     </header>
   )
 };
 
-export default ShopHeader;
+export default Header;
