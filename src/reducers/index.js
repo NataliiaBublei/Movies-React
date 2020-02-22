@@ -1,19 +1,11 @@
+import { combineReducers } from 'redux';
 
-const initialState = {
-  films: []
-};
+import films from './films.reducer';
+import genres from './genres.reducer';
 
-const reducer = (state = initialState, action) => {
-
-  switch (action.type) {
-    case 'FILMS_LOADED':
-      return {
-        films: action.payload
-      };
-
-    default:
-      return state;
-  }
-};
+const reducer = combineReducers({
+  films,
+  genres
+});
 
 export default reducer;

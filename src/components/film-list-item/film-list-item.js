@@ -1,10 +1,19 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
 
+import Rating from '../rating/rating';
 import './film-list-item.css';
-import Rating from "../rating/rating";
 
-const FilmListItem = ({ film }) => {
-  const { title, genreIds, releaseDate, overview, posterPath, voteAverage } = film;
+const FilmListItem = ({ film, genresArray, errorGenres }) => {
+
+  const { posterPath, title, genreIds, voteAverage, releaseDate } = film;
+
+  function getFilmGenres(arrayId, arrayObject) {
+    const filterGenresArray = arrayObject.filter(genre => arrayId.find(id => genre.id === id));
+    const genres = filterGenresArray.map(genre => genre.name).join(', ');
+
+    return errorGenres ? <i>Here must be genres</i> : genres;
+  }
 
   return (
     <div className="film-list-item">
@@ -12,13 +21,21 @@ const FilmListItem = ({ film }) => {
         <img src={posterPath} alt="poster"/>
       </div>
       <div className="film-details">
-        <a href="#" className="film-title">{title}</a>
-        <div className="film-genreIds">{genreIds}</div>
+        <span className="film-title">{title}</span>
+        <div className="film-genreIds">
+          {getFilmGenres(genreIds, genresArray)}
+        </div>
+      </div>
+      <div className="position">
         <Rating rating={voteAverage}/>
         <div className="film-releaseDate">{releaseDate}</div>
       </div>
     </div>
-  )
+  );
 };
 
-export default FilmListItem;
+const mapStateToProps = ({ genres: { genres: genresArray, errorGenres } }) => {
+  return { genresArray, errorGenres };
+};
+
+export default connect(mapStateToProps)(FilmListItem);

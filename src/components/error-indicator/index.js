@@ -1,3 +1,3 @@
-import ErrorIndicator from "./error-indictor";
+import ErrorIndicator from './error-indictor';
 
 export default ErrorIndicator;

@@ -1,3 +1,3 @@
-import FilmsPage from "./films-page";
+import FilmsPage from './films-page';
 
 export default FilmsPage;

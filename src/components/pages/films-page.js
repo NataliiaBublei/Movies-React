@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import FilmList from "../Film-list/film-list";
-import './films-page.css'
+import FilmList from '../Film-list';
 
 const FilmsPage = () => {
-  return  <FilmList />
+  return <FilmList/>;
 };
 
 export default FilmsPage;

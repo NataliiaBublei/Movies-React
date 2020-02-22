@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
 
-import './rating.css'
+import './rating.css';
 
-class Rating extends Component{
+class Rating extends Component {
   state = {
     rating: this.props.rating || null,
     temp_rating: null
@@ -11,7 +11,7 @@ class Rating extends Component{
   render() {
     let stars = [];
 
-    for(let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
       let klass = 'star-rating__star';
 
       if (this.state.rating / 2 >= i && this.state.rating != null) {
@@ -19,7 +19,7 @@ class Rating extends Component{
       }
 
       stars.push(
-        <label className={klass}>
+        <label className={klass} key={i}>
           ★
         </label>
       );
@@ -32,6 +32,5 @@ class Rating extends Component{
     );
   }
 }
-
 
 export default Rating;

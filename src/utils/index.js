@@ -1,4 +1,4 @@
-import compose from "./comopose";
+import compose from './comopose';
 
 export {
   compose

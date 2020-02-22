@@ -1,49 +1,65 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 
-import FilmListItem from "../film-list-item";
-import { withFilmsService } from '../hoc';
-import { filmsLoaded } from "../../actions";
-import { compose } from "../../utils";
+import FilmListItem from '../film-list-item';
+import Spinner from '../spinner';
+import ErrorIndicator from '../error-indicator';
 
-import './film-list.css'
+import './film-list.css';
 
-class FilmList extends Component {
-
-  componentDidMount() {
-    const { apiAdapter } = this.props;
-
-    apiAdapter.getAllFilms().then((data) => this.props.filmsLoaded(data));
-  }
-
-  render() {
-    const { films } = this.props;
-
-    return (
+const FilmList = ({ films, getMoreFilms }) => {
+  return (
+    <div className="flex">
       <ul className="film-list">
         {
           films.map((film) => {
             return (
               <li key={film.id}>
-                <FilmListItem film={film} />
+                <FilmListItem film={film}/>
               </li>
-            )
+            );
           })
         }
       </ul>
-    )
+      <button onClick={getMoreFilms} className="more-films">See more films...</button>
+    </div>
+  );
+};
+
+class FilmListContainer extends Component {
+  state = {
+    page: 1
+  };
+
+  componentDidMount() {
+    const { fetchFilms, fetchGenres } = this.props;
+
+    fetchFilms(this.state.page);
+    fetchGenres();
+  }
+
+  getMoreFilms = () => {
+    this.props.fetchMoreFilms(this.state.page + 1);
+
+    this.setState((state) => {
+      return {
+        page: state.page + 1
+      };
+    });
+  };
+
+  render() {
+    const { films, loading, errorFilms } = this.props;
+
+    if (loading) {
+      return <Spinner/>;
+    }
+
+    if (errorFilms) {
+      return <ErrorIndicator/>;
+    }
+
+    return <FilmList films={films} getMoreFilms={this.getMoreFilms}/>;
   }
 }
 
-const mapStateToProps = ({ films }) => {
-  return { films }
-};
-
-const mapDispatchToProps = {
-  filmsLoaded
-};
-
-export default compose(
-  withFilmsService(),
-  connect(mapStateToProps, mapDispatchToProps)
-)(FilmList);
+export default FilmListContainer;

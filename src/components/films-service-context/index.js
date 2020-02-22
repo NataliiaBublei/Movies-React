@@ -1,9 +1,9 @@
 import {
   FilmsServiceProvider,
   FilmsServiceConsumer
-} from "./bookstore-service-context";
+} from './bookstore-service-context';
 
 export {
   FilmsServiceProvider,
   FilmsServiceConsumer
-}
+};

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     background-color: #ffffff;
     width: 100%;
     position: fixed;
@@ -17,9 +18,10 @@
 .header .logo {
     font-family: "Playfair Display", Georgia, serif;
     font-size: 2rem;
-    color: rgb(76,76,76);
+    color: rgb(76, 76, 76);
     position: relative;
 }
+
 .header form {
     display: flex;
     border: solid 1px gray;
@@ -36,8 +38,8 @@
 }
 
 .header form button {
-    width:32px;
-    height:30px;
+    width: 32px;
+    height: 30px;
     background: url("https://s1.iconbird.com/ico/2013/9/452/w512h5121380477032search.png") no-repeat top;
     background-size: 25px;
     border: none;
@@ -54,6 +56,6 @@
     right: 40px;
     display: flex;
     align-items: center;
- }
+}
 
 

@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 
 import { withFilmsService } from '../hoc';
 import { Route, Switch } from 'react-router-dom';
 import FilmsPage from '../pages';
-import Header from "../header";
+import Header from '../header';
 
 import './App.css';
+import Footer from '../footer';
 
 const App = () => {
   return (
@@ -19,8 +20,9 @@ const App = () => {
           <Route render={() => <h2>Page not found!</h2>}/>
         </Switch>
       </main>
+      <Footer/>
     </>
-  )
+  );
 };
 
 export default withFilmsService()(App);

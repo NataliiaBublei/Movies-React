@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import './error-indificator.css';
 import icon from '../../assets/error-indicator.png';
@@ -15,7 +15,7 @@ const ErrorIndicator = () => {
         (but we already sent droids to fix it)
       </span>
     </div>
-  )
+  );
 };
 
 export default ErrorIndicator;

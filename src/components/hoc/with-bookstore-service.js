@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { FilmsServiceConsumer} from "../films-service-context";
+import { FilmsServiceConsumer } from '../films-service-context';
 
 const withFilmsService = () => (Wrapped) => {
   return (props) => {
@@ -9,12 +9,12 @@ const withFilmsService = () => (Wrapped) => {
         {
           (apiAdapter) => {
             return <Wrapped {...props}
-                            apiAdapter={apiAdapter}/>
+                            apiAdapter={apiAdapter}/>;
           }
         }
       </FilmsServiceConsumer>
-    )
-  }
+    );
+  };
 };
 
 export default withFilmsService;
