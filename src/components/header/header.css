@@ -44,18 +44,3 @@
     background-size: 25px;
     border: none;
 }
-
-.header div .icon {
-    max-width: 50px;
-    border-radius: 30px;
-    margin-right: 10px;
-}
-
-.header .user {
-    position: relative;
-    right: 40px;
-    display: flex;
-    align-items: center;
-}
-
-

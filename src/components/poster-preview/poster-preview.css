@@ -1,0 +1,11 @@
+.film-poster {
+    max-width: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.film-poster img {
+    width: 100%;
+    margin-top: -35px;
+    height: 375px;
+}

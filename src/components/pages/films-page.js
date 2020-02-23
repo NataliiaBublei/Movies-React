@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FilmList from '../Film-list';
+import FilmList from '../film-list';
 
 const FilmsPage = () => {
   return <FilmList/>;

@@ -8,51 +8,6 @@
     background-color: #ffffff;
 }
 
-.film-list-item .film-poster {
-    max-width: 250px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.film-list-item .film-poster img {
-    width: 100%;
-    margin-top: -35px;
-    height: 375px;
-}
-
-.film-list-item .film-details {
-    display: flex;
-    flex-direction: column;
-
-    font-size: 16px;
-    font-family: "OpenSans", serif;
-    color: rgb(172, 170, 170);
-    line-height: 1.23;
-    margin: 15px;
-}
-
-.film-list-item .film-details a {
-    text-decoration: none;
-    color: rgb(76, 76, 76);
-}
-
-
-.film-list-item .film-details .film-title {
-    font-size: 18px;
-    font-family: "OpenSans", serif;
-    color: rgb(76, 76, 76);
-}
-
-.film-list-item .film-details .film-title:hover,
-.film-list-item .film-details .film-title:active {
-    color: rgb(25, 25, 25);
-    font-weight: 500;
-}
-
-.film-list-item .film-details .film-genreIds {
-    margin: 5px 0;
-}
-
 .film-list-item .position {
     display: flex;
     justify-content: space-between;

@@ -31,10 +31,7 @@ class FilmListContainer extends Component {
   };
 
   componentDidMount() {
-    const { fetchFilms, fetchGenres } = this.props;
-
-    fetchFilms(this.state.page);
-    fetchGenres();
+    this.props.fetchFilms(this.state.page);
   }
 
   getMoreFilms = () => {

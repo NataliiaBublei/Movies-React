@@ -1,0 +1,12 @@
+.user-info {
+    position: relative;
+    right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info .icon {
+    max-width: 50px;
+    border-radius: 30px;
+    margin-right: 10px;
+}

@@ -1,4 +1,4 @@
-.star-rating__star {
+.star-rating {
     display: inline-block;
     vertical-align: middle;
     line-height: 1;
@@ -8,14 +8,10 @@
     transition: color 0.2s ease-out;
 }
 
-.star-rating__star:hover {
-    cursor: pointer;
-}
-
-.star-rating__star.is-selected {
+.star-rating .is-selected {
     color: #ffd700;
 }
 
-.star-rating__star.is-disabled:hover {
+.star-rating .is-disabled:hover {
     cursor: default;
 }

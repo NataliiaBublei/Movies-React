@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import './rating.css';
+import './stars-rating.css';
 
-class Rating extends Component {
+class StarsRating extends Component {
   state = {
     rating: this.props.rating || null,
     temp_rating: null
@@ -12,10 +12,10 @@ class Rating extends Component {
     let stars = [];
 
     for (let i = 0; i < 5; i++) {
-      let klass = 'star-rating__star';
+      let klass = '';
 
       if (this.state.rating / 2 >= i && this.state.rating != null) {
-        klass += ' is-selected';
+        klass += 'is-selected';
       }
 
       stars.push(
@@ -33,4 +33,4 @@ class Rating extends Component {
   }
 }
 
-export default Rating;
+export default StarsRating;

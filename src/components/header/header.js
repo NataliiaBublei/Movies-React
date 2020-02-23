@@ -1,8 +1,8 @@
 import React from 'react';
-
-import './header.css';
-import userIcon from '../../assets/user-icon.png';
 import { Link } from 'react-router-dom';
+
+import UserInfo from '../user-info';
+import './header.css';
 
 
 const Header = () => {
@@ -16,10 +16,7 @@ const Header = () => {
                name="search" className="search"/>
         <button type="submit" className="search-icon"/>
       </form>
-      <div className="user">
-        <img src={userIcon} className="icon" alt="user"/>
-        <span>Nataliia Bublei</span>
-      </div>
+      <UserInfo/>
     </header>
   );
 };

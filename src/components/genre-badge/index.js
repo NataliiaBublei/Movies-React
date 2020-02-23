@@ -1,19 +1,17 @@
-import FilmList from './film-list';
 import { connect } from 'react-redux';
 
-import { fetchFilms, fetchMoreFilms } from '../../actions/films.actions';
+import GenreBadge from './genre-badge';
 import { fetchGenres } from '../../actions/genres.actions';
 import { compose } from '../../utils';
 import { withFilmsService } from '../hoc';
 
-const mapStateToProps = ({ films: { films, loading, errorFilms } }) => {
-  return { films, loading, errorFilms };
+
+const mapStateToProps = ({ genres: { genres: genresArray, errorGenres } }) => {
+  return { genresArray, errorGenres };
 };
 
 const mapDispatchToProps = (dispatch, { apiAdapter }) => {
   return {
-    fetchFilms: fetchFilms(apiAdapter, dispatch),
-    fetchMoreFilms: fetchMoreFilms(apiAdapter, dispatch),
     fetchGenres: fetchGenres(apiAdapter, dispatch)
   };
 };
@@ -21,4 +19,4 @@ const mapDispatchToProps = (dispatch, { apiAdapter }) => {
 export default compose(
   withFilmsService(),
   connect(mapStateToProps, mapDispatchToProps)
-)(FilmList);
+)(GenreBadge);
