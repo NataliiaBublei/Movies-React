@@ -26,12 +26,10 @@ const films = (state = initialState, action) => {
 
     case 'FETCH_MORE_FILMS_SUCCESS':
       const { payload: { moreNewFilms } } = action;
-      const { films } = state;
-      const moreFilms = films.concat(moreNewFilms);
 
       return {
         ...state,
-        films: moreFilms,
+        films: state.films.concat(moreNewFilms),
         errorFilms: null
       };
 

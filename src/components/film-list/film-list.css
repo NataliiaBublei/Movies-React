@@ -1,36 +1,29 @@
-.flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.film-list {
 }
 
-.flex .film-list {
-    list-style: none;
+.film-list .film-list-flex {
     display: flex;
     flex-wrap: wrap;
     justify-content: center
 }
 
-.flex ul {
-    padding-left: 0;
-}
-
-.film-list li {
+.film-list .film-list-flex li {
     display: contents;
 }
 
-.flex button {
+.film-list button {
+    display: block;
     font-size: 22px;
     border: none;
     cursor: pointer;
     outline: none;
     color: rgb(76 76 76);
-    margin: 15px;
+    margin: 15px auto;
     width: 300px;
 }
 
-.flex button:hover,
-.flex button:active {
+.film-list button:hover,
+.film-list button:active {
     box-shadow: 0 -3px lightgray inset;
     transition: 0.2s;
 }

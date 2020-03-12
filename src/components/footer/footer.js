@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <div className="copy">© 2020 Кинопортал filmix.co</div>
+        <div className="footer-container-copy">© 2020 Кинопортал filmix.co</div>
         <nav className="footer-menu">
           <ul>
             <li><Link to="/">Home</Link></li>

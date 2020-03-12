@@ -14,14 +14,18 @@
     color: rgb(76, 76, 76);
 }
 
-.film-details .film-title {
+.film-details .film-details-title {
     font-size: 18px;
-    font-family: "OpenSans", serif;
     color: rgb(76, 76, 76);
 }
 
-.film-details .film-title:hover,
-.film-details .film-title:active {
+.film-details .film-details-title:hover,
+.film-details .film-details-title:active {
     color: rgb(25, 25, 25);
     font-weight: 500;
+}
+
+.film-details .film-details-overview {
+    color: rgb(76, 76, 76);
+    font-size: 13px;
 }

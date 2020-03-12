@@ -8,7 +8,7 @@
     background-color: #ffffff;
 }
 
-.film-list-item .position {
+.film-list-item .film-list-item-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +16,6 @@
     margin: auto 10px 10px 10px;
 }
 
-.film-list-item .position .film-releaseDate {
+.film-list-item .film-list-item-rating .film-list-item-releaseDate {
     font-size: 12px;
 }

@@ -9,14 +9,14 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/">
-        <div className="logo">Films</div>
+        <div className="header-logo">Films</div>
       </Link>
       <form>
         <input type="text" placeholder="Search.."
-               name="search" className="search"/>
-        <button type="submit" className="search-icon"/>
+               name="search" className="search-input" />
+        <button type="submit" className="search-icon" />
       </form>
-      <UserInfo/>
+      <UserInfo />
     </header>
   );
 };

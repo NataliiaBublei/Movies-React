@@ -41,7 +41,8 @@ const fetchFilms = (apiAdapter, dispatch) => (page) => {
 
 const fetchMoreFilms = (apiAdapter, dispatch) => (page) => {
   apiAdapter.getAllFilms(page)
-    .then((data) => dispatch(moreFilmsLoaded(data)));
+    .then((data) => dispatch(moreFilmsLoaded(data)))
+    .catch((error) => dispatch(filmsError(error)));
 };
 
 export {

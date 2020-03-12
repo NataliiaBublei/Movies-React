@@ -8,13 +8,13 @@ import './film-list.css';
 
 const FilmList = ({ films, getMoreFilms }) => {
   return (
-    <div className="flex">
-      <ul className="film-list">
+    <div className="film-list">
+      <ul className="film-list-flex">
         {
           films.map((film) => {
             return (
               <li key={film.id}>
-                <FilmListItem film={film}/>
+                <FilmListItem film={film} />
               </li>
             );
           })
@@ -48,14 +48,14 @@ class FilmListContainer extends Component {
     const { films, loading, errorFilms } = this.props;
 
     if (loading) {
-      return <Spinner/>;
+      return <Spinner />;
     }
 
     if (errorFilms) {
-      return <ErrorIndicator/>;
+      return <ErrorIndicator />;
     }
 
-    return <FilmList films={films} getMoreFilms={this.getMoreFilms}/>;
+    return <FilmList films={films} getMoreFilms={this.getMoreFilms} />;
   }
 }
 

@@ -9,8 +9,8 @@ class GenreBadge extends Component {
     this.props.fetchGenres();
   }
 
-  getFilmGenres(arrayId, arrayObject) {
-    const filterGenresArray = arrayObject.filter(genre => arrayId.find(id => genre.id === id));
+  getFilmGenres(arrayOfGenresId, arrayOfGenres) {
+    const filterGenresArray = arrayOfGenres.filter(genre => arrayOfGenresId.find(id => genre.id === id));
 
     return filterGenresArray.map(genre => genre.name).join(', ');
   }
@@ -19,7 +19,7 @@ class GenreBadge extends Component {
     const { genreIds, genresArray, errorGenres } = this.props;
 
     if (errorGenres) {
-      return <ErrorIndicator/>;
+      return <ErrorIndicator />;
     }
 
     return (

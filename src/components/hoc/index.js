@@ -1,4 +1,4 @@
-import withFilmsService from './with-bookstore-service';
+import withFilmsService from './with-film-service';
 
 export {
   withFilmsService

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './stars-rating.css';
 
 class StarsRating extends Component {
+
   state = {
     rating: this.props.rating || null,
     temp_rating: null
